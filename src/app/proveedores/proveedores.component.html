@@ -1,1 +1,15 @@
-<p>proveedores works!</p>
+<h2> Detalles {{proveedor.name | uppercase}} </h2>
+<div><span>id: </span>{{proveedor.id}}</div>
+<div>
+
+<ul class="proveedores">
+  <li *ngFor="let proveedor of proveedores"
+    [class.selected]="proveedor===selectedProveedor"
+    (click)="onSelect(proveedor)">
+  <span class="badge">{{ proveedor.id}}</span> {{proveedor.name}}
+  </li>
+
+</ul>
+
+
+</div>
